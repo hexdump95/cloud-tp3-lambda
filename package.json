@@ -1,0 +1,21 @@
+{
+  "name": "cloud-tp3-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexdump95/cloud-tp3-lambda.git"
+  },
+  "author": "Sergio Villanueva",
+  "bugs": {
+    "url": "https://github.com/hexdump95/cloud-tp3-lambda/issues"
+  },
+  "homepage": "https://github.com/hexdump95/cloud-tp3-lambda#readme",
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  }
+}

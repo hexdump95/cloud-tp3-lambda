@@ -1,5 +1,4 @@
-import { ScanCommandInput } from '@aws-sdk/client-dynamodb';
-import { ScanCommand } from '@aws-sdk/lib-dynamodb';
+import { ScanCommand, ScanCommandInput } from '@aws-sdk/lib-dynamodb';
 import { ddbClient } from './utils/ddbClient';
 
 export const handler = async () => {

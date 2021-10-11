@@ -1,15 +1,4 @@
 Resources:
-  GetEnviosPendientes:
-    Type: AWS::Serverless::Function
-    Properties:
-      Handler: dist/getEnviosPendientes.handler
-      Runtime: nodejs14.x
-      Events:
-        GetEnviosPendientes:
-          Type: Api
-          Properties:
-            Path: /envios/pendientes
-            Method: GET
   PostEnvio:
     Type: AWS::Serverless::Function
     Properties:
@@ -21,3 +10,25 @@ Resources:
           Properties:
             Path: /envios
             Method: POST
+  GetEnviosPendientes:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: dist/getEnviosPendientes.handler
+      Runtime: nodejs14.x
+      Events:
+        GetEnviosPendientes:
+          Type: Api
+          Properties:
+            Path: /envios/pendientes
+            Method: GET
+  PutEnvioEntregado:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: dist/putEnvioEntregado.handler
+      Runtime: nodejs14.x
+      Events:
+        GetEnviosPendientes:
+          Type: Api
+          Properties:
+            Path: /envios/{idEnvio}/entregado
+            Method: PUT

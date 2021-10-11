@@ -1,0 +1,12 @@
+Resources:
+  Envios:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: dist/getEnviosPendientes.handler
+      Runtime: nodejs14.x
+      Events:
+        GetEnviosPendientes:
+          Type: Api
+          Properties:
+            Path: /envios/pendientes
+            Method: get

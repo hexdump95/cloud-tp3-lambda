@@ -7,6 +7,7 @@ export const handler = async (event) => {
 
   const id = uuidv4().toString();
   const fechaAlta = new Date().toISOString();
+  const pendiente = fechaAlta;
 
   if (body.destino == null || body.email == null)
     return {
@@ -18,7 +19,8 @@ export const handler = async (event) => {
     id,
     fechaAlta,
     destino: body.destino,
-    email: body.email
+    email: body.email,
+    pendiente
   };
 
   console.debug("Request to create Envio %s", envio);

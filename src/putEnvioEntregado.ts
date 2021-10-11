@@ -10,7 +10,7 @@ export const handler = async (event) => {
   if (envio.Item == null)
     return { statusCode: 404 };
 
-  if (envio.Item.pendiente != null)
+  if (envio.Item.pendiente == null)
     return {
       statusCode: 400,
       body: JSON.stringify({ message: `Envio ${id} cannot be updated` })
@@ -19,10 +19,7 @@ export const handler = async (event) => {
   const params: UpdateCommandInput = {
     TableName: "Envio",
     Key: { id },
-    UpdateExpression: "set pendiente = :t",
-    ExpressionAttributeValues: {
-      ":t": new Date().toISOString()
-    },
+    UpdateExpression: "REMOVE pendiente",
   };
   try {
     await ddbClient.send(new UpdateCommand(params));

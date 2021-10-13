@@ -11,7 +11,7 @@ docker run -d -p 8000:8000 --network awslocal --name dynamodb amazon/dynamodb-lo
 ```
 ### install dependencies and create table
 ```
-npm ci
+npm install
 npm start
 ```
 ### run lambda locally

@@ -5,10 +5,6 @@ import { ddbClient } from './utils/ddbClient';
 export const handler = async (event) => {
   const body = JSON.parse(event.body);
 
-  const id = uuidv4().toString();
-  const fechaAlta = new Date().toISOString();
-  const pendiente = fechaAlta;
-
   if (body.destino == null || body.email == null)
     return {
       statusCode: 400,
@@ -16,11 +12,11 @@ export const handler = async (event) => {
     };
 
   const envio = {
-    id,
-    fechaAlta,
-    destino: body.destino,
-    email: body.email,
-    pendiente
+    id: uuidv4().toString(),
+    fechaAlta: new Date().toISOString(),
+    destino: body.destino.toString(),
+    email: body.email.toString(),
+    pendiente: new Date().toISOString()
   };
 
   console.debug("Request to create Envio %s", envio);
